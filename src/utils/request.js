@@ -75,7 +75,7 @@ request.interceptors.response.use(undefined, (err) => {
       }
     );
   }
-  // 必须抛异常，否则不会进失败回调
-  throw err;
+  // 必须返回异常，否则不会进失败回调
+  return Promise.reject(err);
 });
 export default request;
